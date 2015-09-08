@@ -19,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+.ipynb_checkpoints/
 *.egg-info/
 .installed.cfg
 *.egg

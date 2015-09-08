@@ -1,25 +1,12 @@
-# Introduction to Python
-Learn the basic concepts of `python`.
-## Getting to know `python`
-### Introduction to `python` (and `spyder`)
-### String manipulation
-### Data types in `python`
-### Functions, classes, and beyond
+# Computational Social Science Workshop material
+Material prepared for the Stanford Computational Social Science python and web
+scraping workshops, held Sep. 10-11, 2015. See [https://css-center.stanford.edu/2015-summer-workshop][css-website]  for more information.
 
-## A pythonic workflow
-### Introduction to shell scripts and [Stanford Farmshare][stanford-farmshare]
-### Read/write files with `python`
-### Jupyter (formerly ipython-notebook)
+## Contents
+An overview of the course material is presented below. Look into each folder for
+more details.
+### Introduction to Python
 
-## Optional references
-- [The Official Python Tutorial][python-tutorial]
-- [Google Python class online][google-class]
-- [Stanford Farmshare wiki][stanford-farmshare]
+### Web scraping
 
-## Required (recommended) software
-- [Anaconda python distribution][anaconda]
-
-[anaconda]: https://store.continuum.io/cshop/anaconda/
-[stanford-farmshare]: https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/Main_Page
-[python-tutorial]: https://docs.python.org/2/tutorial/
-[google-class]: https://developers.google.com/edu/python/
+[css-website]: https://css-center.stanford.edu/2015-summer-workshop

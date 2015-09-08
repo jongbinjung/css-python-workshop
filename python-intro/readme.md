@@ -1,10 +1,11 @@
 # Introduction to Python
 A brief introduction to `python` in three sections:
+
 1. `python` scripting in the interpreter
- 1. control flow and various data structures
- 1. functions and modules
- 1. classes
 1. `python` development
+  1. control flow and various data structures
+  1. functions and modules
+  1. classes
 1. `ipython-notebook` (Jupyter) and popular packages (e.g., `pandas`, `sklearn`)
 
 ## Directories

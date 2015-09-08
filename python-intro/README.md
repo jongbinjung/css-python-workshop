@@ -1,12 +1,12 @@
-# Computational Social Science Workshop material
-Material prepared for the Stanford Computational Social Science python and web
-scraping workshops, held Sep. 10-11, 2015. See [https://css-center.stanford.edu/2015-summer-workshop][css-website]  for more information.
+# Introduction to Python
+A brief introduction to `python` in three sections:
+1. `python` scripting in the interpreter
+ 1. control flow and various data structures
+ 1. functions and modules
+ 1. classes
+1. `python` development
+1. `ipython-notebook` (Jupyter) and popular packages (e.g., `pandas`, `sklearn`)
 
-## Contents
-An overview of the course material is presented below. Look into each folder for
-more details.
-### Introduction to Python
-
-### Web scraping
-
-[css-website]: https://css-center.stanford.edu/2015-summer-workshop
+## Directories
+- `handouts/`: printable `pdf` of all notes, originally written in Jupyter
+- `solutions/`: solutions to each exercise as commented, independent `python` scripts

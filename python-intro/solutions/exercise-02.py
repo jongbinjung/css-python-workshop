@@ -1,11 +1,25 @@
-# -*- coding: utf-8 -*-
 """
-Created on Sun Sep 06 23:38:16 2015
+Solution for Exercise 2 of the CSS Introduction to Python Workshop
 
-@author: Jongbin
+@author: Jongbin Jung
 """
 
 # 1. 
+names = ['Harry', 'Ron', 'Hermione']
+verbs = ['likes', 'hates', 'eats']
+objects = ['pie', 'owls', 'the snitch']
+
+combos = [(name, verb, obj) 
+    for name in names for verb in verbs for obj in objects]
+
+
+# 2.
+for combo in combos:
+    name, verb, obj = combo
+    if name == 'Harry' and verb == 'eats':
+        print ' '.join(combo) + '.'
+
+# 3. 
 words = {}
 with open('two_cities.txt', 'r') as text:
     for line in text:
@@ -16,13 +30,8 @@ with open('two_cities.txt', 'r') as text:
                 words[word] = 1
                 
 
-# 2.
-def filter_counts(min, max, d):
-    for k,v in d.iteritems():
-        if v >= min and v <= max:
-            print k, ':', v
-
-filter_counts(500, 700, words)
-
-for word in sorted(words, key=words.get):
-    print word, words[word]
+# 4.
+min, max = 500, 700
+for k,v in words.iteritems():
+    if v >= min and v <= max:
+        print k, ':', v

@@ -1,0 +1,188 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+#sidebar {
+	background: rgb(61, 79, 93);
+    color: #fff;
+	overflow: hidden;
+	height: 100%;
+}
+
+#main {
+	background-color: white;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#layout {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+.header {
+    text-align: center;
+    top: auto;
+    margin: 10em auto;
+}
+
+.main-title,
+.sub-title {
+    margin: 0;
+}
+
+.main-title {
+    text-transform: uppercase;
+}
+
+.sub-title {
+    font-weight: 300;
+    color: rgb(176, 202, 219);
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.nav-item a {
+    background: transparent;
+    border: 2px solid rgb(176, 202, 219);
+    color: #fff;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 85%;
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+    border: 2px solid rgb(61, 146, 201);
+    text-decoration: none;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #222;
+    margin: 1em 0em .2em 0em;
+}
+
+.week-title {
+    font-size: 1.25em;
+    color: #222;
+    margin: 2em 0em .2em 0em;
+}
+
+#overview-sec {
+    font-family: Georgia, "Cambria", serif;
+    color: #666;
+    line-height: 1.6em;
+	width: 600px;
+	margin: 1em;
+	text-align: justify;
+}
+
+#syllabus-sec {
+    font-family: Georgia, "Cambria", serif;
+    color: #666;
+    line-height: 1.6em;
+	width: 650px;
+	margin: 1em;
+	text-align: left;
+}
+
+#assignments-sec {
+    font-family: Georgia, "Cambria", serif;
+    color: #666;
+    line-height: 1.6em;
+	width: 650px;
+	margin: 1em;
+	text-align: justify;
+}
+
+#lectures-sec {
+    font-family: Georgia, "Cambria", serif;
+    color: #666;
+    line-height: 1.6em;
+	width: 650px;
+	margin: 1em;
+	text-align: justify;
+}
+
+#homework-sec {
+    font-family: Georgia, "Cambria", serif;
+    color: #666;
+    line-height: 1.6em;
+	width: 650px;
+	margin: 1em;
+	text-align: justify;
+	padding-bottom: 20px;
+}
+
+code {
+	background-color: LightGray;
+	width:100%;
+	padding:5px;
+	display: block;
+	text-align: left;
+	font-size: 14px;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table.problem-set {
+    align-self: center;
+}
+
+table.problem-set
+th.problem-set,
+td.problem-set {
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    font-size: 11px;
+    line-height: 1.2em;
+}
+th, td {
+    border: none;
+}
+th.first-row {
+    border-top: 2px solid;
+    border-bottom: 1px solid;
+    border-left: none;
+    border-right: none;
+}
+td.last-row {
+    border-bottom: 2px solid;
+    border-left: none;
+    border-right: none;
+}

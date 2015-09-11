@@ -1,0 +1,550 @@
+        self.link = urllib2.urlopen(URL)  # open the url
+        text = self.link.read()
+        with open(filename, 'w') as f:  # open file to write on
+            f.write(text)
+        BookReader.__init__(self.filename)
+
+
+obr = OnlineBookReader('https://db.tt/vTn9ORtc')
+word_count = obr.count_words()  # assign the dictionary to word_count
+class OnlineBookReader(BookReader):
+    """Read a URL, save as file, and count the words"""
+    def __init__(self, URL, filename='tmp'):  # set a default filename
+        self.link = urllib2.urlopen(URL)  # open the url
+        text = self.link.read()
+        with open(filename, 'w') as f:  # open file to write on
+            f.write(text)
+        BookReader.__init__(filename)
+
+
+obr = OnlineBookReader('https://db.tt/vTn9ORtc')
+class OnlineBookReader(BookReader):
+    """Read a URL, save as file, and count the words"""
+    def __init__(self, URL, filename='tmp'):  # set a default filename
+        self.link = urllib2.urlopen(URL)  # open the url
+        text = self.link.read()
+        with open(filename, 'w') as f:  # open file to write on
+            f.write(text)
+        BookReader.__init__(self, filename)
+
+
+obr = OnlineBookReader('https://db.tt/vTn9ORtc')
+online_word_count = obr.count_words()
+online_word_count
+online_word_count == word_count
+
+##---(Wed Sep 09 19:19:24 2015)---
+%timeit print 'me'
+runfile('C:/Users/Jongbin/repos/css-python-workshop/python-intro/solutions/exercise-01.py', wdir='C:/Users/Jongbin/repos/css-python-workshop/python-intro/solutions')
+wdir
+runfile('C:/Users/Jongbin/repos/css-python-workshop/python-intro/solutions/exercise-01.py', wdir='C:/Users/Jongbin/repos/css-python-workshop/python-intro/solutions')
+s
+debugfile('C:/Users/Jongbin/repos/css-python-workshop/python-intro/solutions/exercise-01.py', wdir='C:/Users/Jongbin/repos/css-python-workshop/python-intro/solutions')
+del s
+del words
+%clear
+
+##---(Fri Sep 11 00:04:03 2015)---
+from selenium import webdriver
+from bs4 import BeautifulSoup  # optional for bs4 implementation
+
+
+def print_text(browser, class_='_xlv_S'):
+    """Get list of senders from current browser view"""
+    for element in browser.find_elements_by_class_name(class_):
+        print element.text
+
+
+
+def print_text_with_bs4(browser, class_='_xlv_S'):
+    """Alternative implementation of get_senders with bs4"""
+    html = browser.page_source
+    soup = BeautifulSoup(html)
+    for sender in soup.find_all('div', class_=class_):
+        print sender.text
+
+
+browser = webdriver.Firefox()
+browser.get('http://webmail.stanford.edu')
+print_text(browser)  # use default class_ for now
+panes = browser.find_elements_by_class_name('scrollContainer')
+for pane in panes:
+    if '_xlv_e1' in pane.get_attribute('class'):
+        browser.execute_script('arguments[0].scrollTop = '
+                               'arguments[0].scrollHeight', pane)
+
+
+import requests
+link = requests.get('http://www.crummy.com/software/BeautifulSoup/')
+html = link.content
+html
+print html
+for line in html:    if 'soup' in line.lower().strip():        print line
+for line in html:    if 'soup' in line.lower().split():        print line
+for line in html:    line.lower().split()
+html
+line.split()
+line.split('\n')
+html.split()
+import re
+re.search('Beautiful Soup', html)
+item re.search('Beautiful Soup', html)
+item = re.search('Beautiful Soup', html)
+item
+item.group
+item.group()
+item.string()
+item.string
+for i in item:    print i
+item.group(0)
+item.group(1)
+item = re.search('\Ahref', html)
+item.groups
+item.group
+item.group(0)
+item
+soup = BeautifulSoup(html)
+soup.prettify
+soup.title
+soup.title.text
+soup.p
+soup.p.next
+soup.p.next.next
+soup.ol
+soup.ol.li
+soup.ol.li.nex
+soup.ol.li.next
+soup.ol.li.sibling
+soup.ol.li.next_sibling
+
+soup.ol.li.next_sibling
+soup.ol.li.next_sibling.next_sibling
+soup.ol.children
+for child in soup.ol.children:    print child
+
+##---(Fri Sep 11 10:06:01 2015)---
+from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
+import requests
+url = 'http://www.crummy.com/software/BeautifulSoup/'
+page = requests.get(url)
+page.url
+page.content
+print page.content
+page.content.split()
+soup = BeautifulSoup(page.content)
+soup.title
+soup.a
+soup.a.get('href')
+soup.li
+soup.li.parent
+soup.li.sibling
+soup.li.fetchNextSiblings
+soup.li.findNextSibling
+soup.find_all('a')
+for link in soup.find_all('a'):
+    link.get('href')
+
+
+for link in soup.find_all('a'):
+    print link.get('href')
+
+
+addresses = [link.get('href') for
+                link in soup.find_all('a')]
+addresses
+page = requests.get(url)
+page.content
+soup = BeautifulSoup(page.content)
+soup
+soup.title
+page = requests.get(url)
+soup = BeautifulSoup(page.content)
+soup.title
+del soup
+url = 'http://www.imdb.com/title/tt0111161/?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=2164853282&pf_rd_r=0E5C0QKXS16AF2JCPJ3N&pf_rd_s=center-1&pf_rd_t=15506&pf_rd_i=top&ref_=chttp_tt_1'
+
+page = requests.get(url)
+soup = BeautifulSoup(page.content)
+soup.title
+soup.a
+soup.find_all('a')
+p.find_all('a')
+soup.find('table', class_='cast_list')
+(
+soup.find('table', class_='cast_list')
+    .find_all('tr')
+    )
+for row in (
+
+soup.find('table', class_='cast_list')
+    .find_all('tr')
+    ):
+        print row
+        print
+        print
+soup.find('table')
+for row in (
+
+soup.find('table', class_='cast_list')
+    .find_all('tr')
+    ):
+        row.find(itemprop='name').text
+        row.find(class_='character').text
+for row in (
+
+soup.find('table', class_='cast_list')
+    .find_all('tr')
+    ):
+        try:
+            actor = row.find(itemprop='name').text
+            role = row.find(class_='character').text
+
+            print actor, role
+        except AttributeError:
+            pass
+actor
+role
+role.split()
+' '.join(role.split())
+def clean_text(s):
+    return ' '.join(s.split())
+
+
+clean_text(role)
+for row in (
+
+soup.find('table', class_='cast_list')
+    .find_all('tr')
+    ):
+        try:
+            actor = row.find(itemprop='name').text
+            role = row.find(class_='character').text
+
+            actor = clean_text(actor)
+            role = clean_text(role)
+
+            print actor, role
+        except AttributeError:
+            pass
+
+role
+for row in (
+
+soup.find('table', class_='cast_list')
+    .find_all('tr')
+    ):
+        try:
+            actor = row.find(itemprop='name').text
+            role = row.find(class_='character').text
+
+            actor = clean_text(actor)
+            role = clean_text(role)
+
+            '\t'.join([actor, role])
+        except AttributeError:
+            pass
+
+for row in (
+
+soup.find('table', class_='cast_list')
+    .find_all('tr')
+    ):
+        try:
+            actor = row.find(itemprop='name').text
+            role = row.find(class_='character').text
+
+            actor = clean_text(actor)
+            role = clean_text(role)
+
+            print '\t'.join([actor, role])
+        except AttributeError:
+            pass
+
+from time import sleep
+from time import sleep
+
+sleep(5)
+import test
+page = requests.get(main_url)
+soup = BeautifulSoup(page.content)
+main_url = 'http://www.imdb.com/chart/top?ref_=nv_ch_250_4'
+
+page = requests.get(main_url)
+soup = BeautifulSoup(page.content)
+soup.title
+soup.find('tbody', class_='lister-list)
+soup.find('tbody', class_='lister-list')
+(
+soup.find('tbody', class_='lister-list')
+    .find_all('td', class_='titleColumn')
+)
+for movie in (
+
+soup.find('tbody', class_='lister-list')
+    .find_all('td', class_='titleColumn')
+):
+    print movie.a.get('href')
+prefix = 'http://imdb.com'
+for movie in (
+
+soup.find('tbody', class_='lister-list')
+    .find_all('td', class_='titleColumn')
+):
+    print prefix + movie.a.get('href')
+for movie in (
+
+soup.find('tbody', class_='lister-list')
+    .find_all('td', class_='titleColumn', limit=10)
+):
+    print prefix + movie.a.get('href')
+for movie in (
+
+soup.find('tbody', class_='lister-list')
+    .find_all('td', class_='titleColumn', limit=3)
+):
+    movie_url = prefix + movie.a.get('href')
+
+    sleep(3)
+    test.get_cast_list(movie_url)
+import requests
+%clear
+params = {'genres': 'action',
+          'sort': 'moviemeter,asc',
+          'start': 1}
+params
+base_url = 'http://www.imdb.com/search/title'
+
+base_url
+page = requests.get(base_url, params=params)
+page.url
+range(1, 250, 50)
+if __name__ == '__main__':
+    base_url = 'http://www.imdb.com/search/title'
+
+    for start in range(1, 250, 50):
+
+        params = {'genres': 'action',
+                  'sort': 'moviemeter,asc',
+                  'start': start}
+
+        page = requests.get(base_url, params=params)
+
+        soup = BeautifulSoup(page.content)
+
+        for movie in (soup.find('table', class_='results')
+            .find_all('td', class_='title')):
+            print movie.text
+
+
+base_url = 'http://www.imdb.com/search/title'
+
+for start in range(1, 250, 50):
+
+    params = {'genres': 'action',
+              'sort': 'moviemeter,asc',
+              'start': start}
+
+    page = requests.get(base_url, params=params)
+
+    soup = BeautifulSoup(page.content)
+
+    for movie in (soup.find('table', class_='results')
+        .find_all('td', class_='title')):
+        print movie.a.text
+
+
+from selenium import webdriver
+
+browser = webdriver.Firefox()
+url = 'http://webmail.stanford.edu'
+browser.get(url)
+browser.back()
+browser.get(url)
+
+from bs4 import BeautifulSoup
+browser.page_source
+html = browser.page_source
+soup = BeautifulSoup(html)
+for sender in soup.find_all('div', class_='_xlv_S'):
+    print sender.text
+
+
+browser.find_elements_by_class_name('_xlv_S')
+for element in browser.find_elements_by_class_name('_xlv_S'):
+    element.text
+
+
+for element in browser.find_elements_by_class_name('_xlv_S'):
+    print element.text
+
+
+containers = browser.find_elements_by_class_name('scrollContainer')
+containers
+for container in containers:
+    if '_xlv_e1' in container.get_attribute('class'):
+        print container.get_attribute('class')
+
+
+for container in containers:
+    if '_xlv_e1' in container.get_attribute('class'):
+        browser.execute_script('argument[0].scrollTop ='
+            'argument[0].scrollHeight', container)
+
+
+containers = browser.find_elements_by_class_name('scrollContainer')
+
+for container in containers:
+    if '_xlv_e1' in container.get_attribute('class'):
+        browser.execute_script('argument[0].scrollTop ='
+            'argument[0].scrollHeight', container)
+
+
+containers
+for container in containers:
+    if '_xlv_e1' in container.get_attribute('class'):
+        browser.execute_script('argument[0].scrollTop ='
+            'argument[0].scrollHeight', container)
+
+
+for container in containers:
+    if '_xlv_e1' in container.get_attribute('class'):
+        browser.execute_script('argument[0].scrollTop = argument[0].scrollHeight', container)
+
+
+for container in containers:
+    if '_xlv_e1' in container.get_attribute('class'):
+        browser.execute_script('arguments[0].scrollTop = arguments[0].scrollHeight', container)
+
+
+for sender in soup.find_all('div', class_='_xlv_S'):
+    print sender.text
+
+
+for element in browser.find_elements_by_class_name('_xlv_S'):
+    print element.text
+
+
+import requests
+page = requests.get('http://www.edmunds.com/inventory/used/srp.html')
+page
+page.content
+base_url = 'http://www.edmunds.com/api/inventory/v3/upp/getInventories/'
+
+params = {
+    'zipcode': 94305,
+    'range': 50,
+    'make': 'Honda',
+    'model': 'Accord',
+    'bodyTypes': 'Sedan',
+    'sortBy'='partner_code'
+    }
+params = {
+    'zipcode': 94305,
+    'range': 50,
+    'make': 'Honda',
+    'model': 'Accord',
+    'bodyTypes': 'Sedan',
+    'sortBy': 'partner_code'
+    }
+data = requests.get(base_url, params=params).json()
+base_url = 'http://www.edmunds.com/api/inventory/v3/upp/getInventories/'
+
+params = {
+    'zipcode': 94305,
+    'range': 50,
+    'make': 'Honda',
+    'model': 'Accord',
+    'bodyTypes': 'Sedan',
+    'sortBy': 'partner_code',
+    'pageNumber': 1,
+    'pageSize': 10
+    }
+data = requests.get(base_url, params=params).json()
+data.keys()
+ data['inventory']
+data['inventory'][0]
+data['inventory'][0].keys()
+keys = ['vin', 'year', 'price', 'mileage']
+inventory = data['inventory']
+for item in inventory:
+    for key in keys:
+        print item[key],
+
+
+base_url = 'http://www.edmunds.com/api/inventory/v3/upp/getInventories/'
+
+params = {
+    'zipcode': 94305,
+    'range': 50,
+    'make': 'Honda',
+    'model': 'Accord',
+    'bodyTypes': 'Sedan',
+    'sortBy': 'partner_code',
+    'pageNumber': 1,
+    'pageSize': 10000
+    }
+
+data = requests.get(base_url, params=params).json()
+
+inventory = data['inventory']
+
+for item in inventory:
+    for key in keys:
+        print item[key],
+
+
+%clear
+from tweepy import Stream
+from tweepy import OAuthHandler
+from tweepy.streaming import StreamListener
+
+with open(key_file, 'r') as f:
+    for line in f:
+        key, value = line.split()
+        print key, value
+
+
+key_file = 'keys.txt'
+
+creds = {}
+with open(key_file, 'r') as f:
+    for line in f:
+        key, value = line.split()
+        print key, value
+
+
+creds = {}
+with open(key_file, 'r') as f:
+    for line in f:
+        key, value = line.split()
+        creds[key] = value
+
+
+creds
+auth = OAuthHandler(creds['api_key'], creds['api_secret'])
+auth
+auth.set_access_token(creds['token'], creds['token_secret'])
+auth
+twitterStream = Stream(auth, StreamListener())
+twitterStream.sample()
+class SimpleListener(StreamListener):
+    """Simple listener for example"""
+    def on_data(self, tweet):
+        print tweet
+
+
+twitterStream = Stream(auth, SimpleListener())
+
+twitterStream.sample()
+class SimpleListener(StreamListener):
+    """Simple listener for example"""
+    def on_data(self, tweet):
+        tweet['created_at']
+
+
+
+twitterStream.sample()
+twitterStream = Stream(auth, SimpleListener())
+
+twitterStream.sample()

@@ -32,7 +32,9 @@ params = {
 # specify the items we're interested in
 keys = ['vin', 'year', 'trim', 'mileage', 'price']
 
-base_url = 'http://www.edmunds.com/api/inventory/v3/upp/getInventories/?'
+# this is a place holder for the url to the api that you'll
+#   found during the workshop!
+base_url = '/url/to/api'
 
 # request json file with GET
 cars = requests.get(base_url, params=params).json()

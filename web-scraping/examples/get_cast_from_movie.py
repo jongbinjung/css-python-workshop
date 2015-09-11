@@ -1,23 +1,4 @@
 # -*- coding: utf-8 -*-
-""" Web scraping script using requests and bs4
-    Used for web scraping tutorial session by the Stanford Data Science
-    Drop-in. February 2, 2015.
-
-    Requires:
-    BeautifulSoup(http://www.crummy.com/software/BeautifulSoup)
-        pip install beautifulsoup4
-            or
-        easy_install beautifulsoup4
-    Requests(http://docs.python-requests.org/)
-        pip install requests
-            or
-        easy_install requests
-
-    This will collect and print  
-    {Actor Name}    {Character Name}
-    from the cast overview in a given IMDb.com movie page
-@author: Jongbin Jung (jongbin at stanford edu)
-"""
 from bs4 import BeautifulSoup
 import requests
 
@@ -47,7 +28,7 @@ soup = BeautifulSoup(movie_page.content)
 # row for spacing the layout). Therefore, we need to use a try-except
 # block to make sure we capture only the rows we want, without python
 # complaining.
-for row in soup.find_all('tr'):
+for row in soup.find('table', class_='cast_list').find_all('tr'):
     try:
         actor = clean_text(row.find(itemprop='name').text)
         character = clean_text(row.find(class_='character').text)
